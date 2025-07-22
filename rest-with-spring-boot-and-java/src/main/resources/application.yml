@@ -12,6 +12,9 @@ spring:
     properties:
       hibernate:
     show-sql: false
-
     open-in-view: false
   # spring.jpa.open-in-view
+logging:
+  level:
+     #root: WARN
+   br.com.jvictorvale: DEBUG
