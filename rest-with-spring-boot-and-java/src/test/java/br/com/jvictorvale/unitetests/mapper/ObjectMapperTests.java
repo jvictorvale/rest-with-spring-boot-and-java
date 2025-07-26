@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 
-import br.com.jvictorvale.com.jvictorvale.data.dto.PersonDTO;
+import br.com.jvictorvale.com.jvictorvale.data.dto.v1.PersonDTO;
 import br.com.jvictorvale.com.jvictorvale.model.Person;
 import br.com.jvictorvale.unitetests.mapper.mocks.MockPerson;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,7 +1,9 @@
 package br.com.jvictorvale.com.jvictorvale.services;
 
-import br.com.jvictorvale.com.jvictorvale.data.dto.PersonDTO;
+import br.com.jvictorvale.com.jvictorvale.data.dto.v1.PersonDTO;
+import br.com.jvictorvale.com.jvictorvale.data.dto.v2.PersonDTOV2;
 import br.com.jvictorvale.com.jvictorvale.exception.ResourceNotFoundExeception;
+import br.com.jvictorvale.com.jvictorvale.mapper.custom.PersonMapper;
 import br.com.jvictorvale.com.jvictorvale.model.Person;
 import br.com.jvictorvale.com.jvictorvale.repository.PersonRepository;
 import org.slf4j.Logger;
@@ -25,6 +27,9 @@ public class PersonServices {
     @Autowired
     PersonRepository repository;
 
+    @Autowired
+    PersonMapper mapper;
+
     public List<PersonDTO> findAll(){
         logger.info("Finding all People!");
 
@@ -46,6 +51,14 @@ public class PersonServices {
         var entity = parseObject(person, Person.class);
 
         return parseObject(repository.save(entity), PersonDTO.class);
+    }
+
+    public PersonDTOV2 createV2(PersonDTOV2 person){
+        logger.info("Creating one Person V2!");
+
+        var entity = mapper.convertDTOToEntity(person);
+
+        return mapper.convertEntityToDTO(repository.save(entity));
     }
 
     public PersonDTO update(PersonDTO person){
