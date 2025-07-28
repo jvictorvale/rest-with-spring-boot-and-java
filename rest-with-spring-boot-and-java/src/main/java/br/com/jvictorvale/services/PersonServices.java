@@ -1,9 +1,9 @@
-package br.com.jvictorvale.com.jvictorvale.services;
+package br.com.jvictorvale.services;
 
-import br.com.jvictorvale.com.jvictorvale.data.dto.PersonDTO;
-import br.com.jvictorvale.com.jvictorvale.exception.ResourceNotFoundExeception;
-import br.com.jvictorvale.com.jvictorvale.model.Person;
-import br.com.jvictorvale.com.jvictorvale.repository.PersonRepository;
+import br.com.jvictorvale.data.dto.PersonDTO;
+import br.com.jvictorvale.exception.ResourceNotFoundExeception;
+import br.com.jvictorvale.model.Person;
+import br.com.jvictorvale.repository.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-import static br.com.jvictorvale.com.jvictorvale.mapper.ObjectMapper.parseListObjects;
-import static br.com.jvictorvale.com.jvictorvale.mapper.ObjectMapper.parseObject;
+import static br.com.jvictorvale.mapper.ObjectMapper.parseListObjects;
+import static br.com.jvictorvale.mapper.ObjectMapper.parseObject;
 
 
 @Service

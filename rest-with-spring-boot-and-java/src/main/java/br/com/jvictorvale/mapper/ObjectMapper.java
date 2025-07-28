@@ -1,4 +1,4 @@
-package br.com.jvictorvale.com.jvictorvale.mapper;
+package br.com.jvictorvale.mapper;
 
 import com.github.dozermapper.core.DozerBeanMapperBuilder;
 import com.github.dozermapper.core.Mapper;

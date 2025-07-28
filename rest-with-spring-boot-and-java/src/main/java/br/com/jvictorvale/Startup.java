@@ -1,4 +1,4 @@
-package br.com.jvictorvale.com.jvictorvale;
+package br.com.jvictorvale;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

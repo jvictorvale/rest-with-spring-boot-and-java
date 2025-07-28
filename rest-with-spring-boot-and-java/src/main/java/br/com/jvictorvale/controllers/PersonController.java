@@ -1,12 +1,13 @@
-package br.com.jvictorvale.com.jvictorvale.controllers;
+package br.com.jvictorvale.controllers;
 
-import br.com.jvictorvale.com.jvictorvale.data.dto.PersonDTO;
-import br.com.jvictorvale.com.jvictorvale.services.PersonServices;
+import br.com.jvictorvale.data.dto.PersonDTO;
+import br.com.jvictorvale.services.PersonServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -26,7 +27,14 @@ public class PersonController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public PersonDTO findById(@PathVariable("id") Long id) {
-        return service.findById(id);
+        var person = service.findById(id);
+
+        person.setBirthDay(new Date());
+//        person.setPhoneNumber("+55 (85) 98846-3741");
+        person.setPhoneNumber("");
+        person.setLastName(null);
+        person.setSensitiveData("Foo Bar");
+        return person;
     }
 
     @PostMapping(

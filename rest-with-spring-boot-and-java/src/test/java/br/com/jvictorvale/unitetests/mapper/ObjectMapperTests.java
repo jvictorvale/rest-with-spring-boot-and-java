@@ -1,14 +1,14 @@
 package br.com.jvictorvale.unitetests.mapper;
 
-import static br.com.jvictorvale.com.jvictorvale.mapper.ObjectMapper.parseListObjects;
-import static br.com.jvictorvale.com.jvictorvale.mapper.ObjectMapper.parseObject;
+import static br.com.jvictorvale.mapper.ObjectMapper.parseListObjects;
+import static br.com.jvictorvale.mapper.ObjectMapper.parseObject;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
 
-import br.com.jvictorvale.com.jvictorvale.data.dto.PersonDTO;
-import br.com.jvictorvale.com.jvictorvale.model.Person;
+import br.com.jvictorvale.data.dto.PersonDTO;
+import br.com.jvictorvale.model.Person;
 import br.com.jvictorvale.unitetests.mapper.mocks.MockPerson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
