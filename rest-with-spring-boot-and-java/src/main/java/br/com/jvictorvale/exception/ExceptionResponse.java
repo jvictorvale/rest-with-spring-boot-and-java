@@ -1,4 +1,4 @@
-package br.com.jvictorvale.com.jvictorvale.exception;
+package br.com.jvictorvale.exception;
 
 import java.util.Date;
 

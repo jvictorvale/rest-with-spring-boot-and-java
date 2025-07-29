@@ -1,7 +1,7 @@
-package br.com.jvictorvale.com.jvictorvale.exception.handler;
+package br.com.jvictorvale.exception.handler;
 
-import br.com.jvictorvale.com.jvictorvale.exception.ExceptionResponse;
-import br.com.jvictorvale.com.jvictorvale.exception.ResourceNotFoundExeception;
+import br.com.jvictorvale.exception.ExceptionResponse;
+import br.com.jvictorvale.exception.ResourceNotFoundExeception;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

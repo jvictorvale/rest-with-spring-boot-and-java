@@ -1,4 +1,4 @@
-package br.com.jvictorvale.com.jvictorvale.model;
+package br.com.jvictorvale.model;
 
 import jakarta.persistence.*;
 

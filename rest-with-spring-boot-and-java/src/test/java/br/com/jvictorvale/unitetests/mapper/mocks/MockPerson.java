@@ -1,7 +1,7 @@
 package br.com.jvictorvale.unitetests.mapper.mocks;
 
-import br.com.jvictorvale.com.jvictorvale.data.dto.PersonDTO;
-import br.com.jvictorvale.com.jvictorvale.model.Person;
+import br.com.jvictorvale.data.dto.PersonDTO;
+import br.com.jvictorvale.model.Person;
 
 import java.util.ArrayList;
 import java.util.List;

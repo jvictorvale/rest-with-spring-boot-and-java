@@ -1,4 +1,4 @@
-package br.com.jvictorvale.com.jvictorvale.data.dto;
+package br.com.jvictorvale.data.dto;
 
 
 import java.io.Serializable;
