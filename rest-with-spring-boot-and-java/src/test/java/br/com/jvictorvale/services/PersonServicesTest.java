@@ -1,7 +1,7 @@
 package br.com.jvictorvale.services;
 
 import br.com.jvictorvale.data.dto.PersonDTO;
-import br.com.jvictorvale.exception.RequiredObjectIsNullExeception;
+import br.com.jvictorvale.exception.RequiredObjectIsNullException;
 import br.com.jvictorvale.model.Person;
 import br.com.jvictorvale.repository.PersonRepository;
 import br.com.jvictorvale.unitetests.mapper.mocks.MockPerson;
@@ -148,7 +148,7 @@ class PersonServicesTest {
 
     @Test
     void testCreateWithNullPerson() {
-        Exception exception = assertThrows(RequiredObjectIsNullExeception.class, () -> service.create(null));
+        Exception exception = assertThrows(RequiredObjectIsNullException.class, () -> service.create(null));
 
         String expectedMessage = "It is not allowed to persist a null object!";
         String actualMessage = exception.getMessage();
@@ -215,7 +215,7 @@ class PersonServicesTest {
 
     @Test
     void testUpdateWithNullPerson() {
-        Exception exception = assertThrows(RequiredObjectIsNullExeception.class, () -> service.update(null));
+        Exception exception = assertThrows(RequiredObjectIsNullException.class, () -> service.update(null));
 
         String expectedMessage = "It is not allowed to persist a null object!";
         String actualMessage = exception.getMessage();

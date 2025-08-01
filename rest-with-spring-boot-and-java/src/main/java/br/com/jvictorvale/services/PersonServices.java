@@ -2,8 +2,8 @@ package br.com.jvictorvale.services;
 
 import br.com.jvictorvale.controllers.PersonController;
 import br.com.jvictorvale.data.dto.PersonDTO;
-import br.com.jvictorvale.exception.RequiredObjectIsNullExeception;
-import br.com.jvictorvale.exception.ResourceNotFoundExeception;
+import br.com.jvictorvale.exception.RequiredObjectIsNullException;
+import br.com.jvictorvale.exception.ResourceNotFoundException;
 import br.com.jvictorvale.model.Person;
 import br.com.jvictorvale.repository.PersonRepository;
 import org.slf4j.Logger;
@@ -39,7 +39,7 @@ public class PersonServices {
         logger.info("Finding one Person!");
 
         var entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundExeception("No records found for this ID"));
+                .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
 
         var dto = parseObject(entity, PersonDTO.class);
         addHateoasLinks(dto);
@@ -48,7 +48,7 @@ public class PersonServices {
 
     public PersonDTO create(PersonDTO person) {
 
-        if(person == null) throw new RequiredObjectIsNullExeception();
+        if(person == null) throw new RequiredObjectIsNullException();
 
         logger.info("Creating one Person!");
 
@@ -61,12 +61,12 @@ public class PersonServices {
 
     public PersonDTO update(PersonDTO person){
 
-        if(person == null) throw new RequiredObjectIsNullExeception();
+        if(person == null) throw new RequiredObjectIsNullException();
 
         logger.info("Updating one Person!");
 
         Person entity = repository.findById(person.getId())
-                .orElseThrow(() -> new ResourceNotFoundExeception("No records found for this ID"));
+                .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
 
         entity.setFirstName(person.getFirstName());
         entity.setLastName(person.getLastName());
@@ -82,7 +82,7 @@ public class PersonServices {
         logger.info("Deleting one Person!");
 
         Person entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundExeception("No records found for this ID"));
+                .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
 
         repository.delete(entity);
     }
