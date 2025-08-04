@@ -1,4 +1,4 @@
-package br.com.jvictorvale.unitetests.mapper.mocks;
+package br.com.jvictorvale.unittests.mapper.mocks;
 
 import br.com.jvictorvale.data.dto.PersonDTO;
 import br.com.jvictorvale.model.Person;

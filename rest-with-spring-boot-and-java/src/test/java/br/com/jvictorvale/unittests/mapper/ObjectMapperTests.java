@@ -1,4 +1,4 @@
-package br.com.jvictorvale.unitetests.mapper;
+package br.com.jvictorvale.unittests.mapper;
 
 import static br.com.jvictorvale.mapper.ObjectMapper.parseListObjects;
 import static br.com.jvictorvale.mapper.ObjectMapper.parseObject;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import br.com.jvictorvale.data.dto.PersonDTO;
 import br.com.jvictorvale.model.Person;
-import br.com.jvictorvale.unitetests.mapper.mocks.MockPerson;
+import br.com.jvictorvale.unittests.mapper.mocks.MockPerson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

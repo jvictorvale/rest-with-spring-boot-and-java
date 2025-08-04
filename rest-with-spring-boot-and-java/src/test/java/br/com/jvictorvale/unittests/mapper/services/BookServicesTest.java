@@ -1,10 +1,11 @@
-package br.com.jvictorvale.services;
+package br.com.jvictorvale.unittests.mapper.services;
 
 import br.com.jvictorvale.data.dto.BookDTO;
 import br.com.jvictorvale.exception.RequiredObjectIsNullException;
 import br.com.jvictorvale.model.Book;
 import br.com.jvictorvale.repository.BookRepository;
-import br.com.jvictorvale.unitetests.mapper.mocks.MockBook;
+import br.com.jvictorvale.services.BookService;
+import br.com.jvictorvale.unittests.mapper.mocks.MockBook;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
