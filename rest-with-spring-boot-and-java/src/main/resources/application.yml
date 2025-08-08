@@ -1,5 +1,7 @@
 cors:
   originPatterns: http://localhost:8080,http://localhost:3000,https://www.jvictorvale.com.br
+file:
+  upload-dir: /Dev/rest-with-spring-boot-upload
 spring:
   application:
    name: rest-with-spring-boot-and-java
@@ -16,6 +18,12 @@ spring:
     show-sql: false
     open-in-view: false
   # spring.jpa.open-in-view
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
 logging:
   level:
      #root: WARN
