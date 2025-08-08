@@ -3,6 +3,7 @@ package br.com.jvictorvale.integrationtests.controllers.withyaml;
 import br.com.jvictorvale.config.TestConfigs;
 import br.com.jvictorvale.integrationtests.controllers.withyaml.mapper.YAMLMapper;
 import br.com.jvictorvale.integrationtests.dto.PersonDTO;
+import br.com.jvictorvale.integrationtests.dto.wrappers.xml.PagedModelPerson;
 import br.com.jvictorvale.integrationtests.testcontainers.AbstractIntegrationTest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -196,6 +197,7 @@ class PersonControllerYamlTest extends AbstractIntegrationTest {
 
         var response = given(specification)
                 .accept(MediaType.APPLICATION_YAML_VALUE)
+                .queryParam("page", 3, "size", 12, "direction", "asc")
                 .when()
                 .get()
                 .then()
@@ -203,9 +205,9 @@ class PersonControllerYamlTest extends AbstractIntegrationTest {
                 .contentType(MediaType.APPLICATION_YAML_VALUE)
                 .extract()
                 .body()
-                .as(PersonDTO[].class, objectMapper);
+                .as(PagedModelPerson.class, objectMapper);
 
-        List<PersonDTO> people = Arrays.asList(response);
+        List<PersonDTO> people = response.getContent();
 
         // PERSON 1
 
@@ -214,11 +216,11 @@ class PersonControllerYamlTest extends AbstractIntegrationTest {
         assertNotNull(personOne.getId());
         assertTrue(personOne.getId() > 0);
 
-        assertEquals("Ayrton", personOne.getFirstName());
-        assertEquals("Senna", personOne.getLastName());
-        assertEquals("São Paulo - Brasil", personOne.getAddress());
+        assertEquals("Amos", personOne.getFirstName());
+        assertEquals("Nisby", personOne.getLastName());
+        assertEquals("Suite 99", personOne.getAddress());
         assertEquals("Male", personOne.getGender());
-        assertTrue(personOne.getEnabled());
+        assertFalse(personOne.getEnabled());
 
         // PERSON 3
 
@@ -227,9 +229,9 @@ class PersonControllerYamlTest extends AbstractIntegrationTest {
         assertNotNull(personThree.getId());
         assertTrue(personThree.getId() > 0);
 
-        assertEquals("Muhamad", personThree.getFirstName());
-        assertEquals("Ali", personThree.getLastName());
-        assertEquals("Kentucky - US", personThree.getAddress());
+        assertEquals("Anatol", personThree.getFirstName());
+        assertEquals("Rigge", personThree.getLastName());
+        assertEquals("Room 1209", personThree.getAddress());
         assertEquals("Male", personThree.getGender());
         assertTrue(personThree.getEnabled());
     }
