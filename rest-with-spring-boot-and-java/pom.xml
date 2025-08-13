@@ -19,7 +19,8 @@
 		<testcontainers.version>1.21.3</testcontainers.version>
 		<apache.poi.version>5.4.1</apache.poi.version>
 		<commons-csv.version>1.14.1</commons-csv.version>
-
+		<jasperreports.version>7.0.3</jasperreports.version>
+		<zxing.version>3.5.3</zxing.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -59,6 +60,31 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>${apache.poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>${jasperreports.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports-fonts</artifactId>
+			<version>${jasperreports.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports-pdf</artifactId>
+			<version>${jasperreports.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>${zxing.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>javase</artifactId>
+			<version>${zxing.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.mysql</groupId>

@@ -3,6 +3,7 @@ package br.com.jvictorvale.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -29,6 +30,18 @@ public class Person implements Serializable {
 
     @Column(nullable = false)
     private Boolean enabled;
+
+    @Column(name = "wikipedia_profile_url", length = 255)
+    private String profileUrl;
+
+    @Column(name = "photo_url", length = 255)
+    private String photoUrl;
+
+    @ManyToMany(fetch =  FetchType.EAGER)
+    @JoinTable(name = "person_books",
+            joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "book_id"))
+    private List<Book> books;
 
     public Person() {}
 
@@ -80,14 +93,38 @@ public class Person implements Serializable {
         this.enabled = enabled;
     }
 
+    public String getProfileUrl() {
+        return profileUrl;
+    }
+
+    public void setProfileUrl(String profileUrl) {
+        this.profileUrl = profileUrl;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Person person)) return false;
-        return Objects.equals(getId(), person.getId()) && Objects.equals(getFirstName(), person.getFirstName()) && Objects.equals(getLastName(), person.getLastName()) && Objects.equals(getAddress(), person.getAddress()) && Objects.equals(getGender(), person.getGender()) && Objects.equals(getEnabled(), person.getEnabled());
+        return Objects.equals(getId(), person.getId()) && Objects.equals(getFirstName(), person.getFirstName()) && Objects.equals(getLastName(), person.getLastName()) && Objects.equals(getAddress(), person.getAddress()) && Objects.equals(getGender(), person.getGender()) && Objects.equals(getEnabled(), person.getEnabled()) && Objects.equals(getProfileUrl(), person.getProfileUrl()) && Objects.equals(getPhotoUrl(), person.getPhotoUrl()) && Objects.equals(getBooks(), person.getBooks());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getFirstName(), getLastName(), getAddress(), getGender(), getEnabled());
+        return Objects.hash(getId(), getFirstName(), getLastName(), getAddress(), getGender(), getEnabled(), getProfileUrl(), getPhotoUrl(), getBooks());
     }
 }
