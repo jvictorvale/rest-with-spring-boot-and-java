@@ -2,6 +2,9 @@ cors:
   originPatterns: http://localhost:8080,http://localhost:3000,https://www.jvictorvale.com.br
 file:
   upload-dir: /Dev/rest-with-spring-boot-upload
+email:
+  subject: "Default Subject"
+  message: "Default Message"
 spring:
   application:
    name: rest-with-spring-boot-and-java
@@ -18,6 +21,16 @@ spring:
     show-sql: false
     open-in-view: false
   # spring.jpa.open-in-view
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.ssl.trust: smtp.gmail.com
   servlet:
     multipart:
       enabled: true
@@ -27,6 +40,8 @@ spring:
 logging:
   level:
      root: INFO
+     org.springframework.mail: DEBUG
+     com.sun.mail.smtp: DEBUG
 #     net.sf.jasperreports.engine.*: TRACE
 #     root: WARN
 #   br.com.jvictorvale: DEBUG
