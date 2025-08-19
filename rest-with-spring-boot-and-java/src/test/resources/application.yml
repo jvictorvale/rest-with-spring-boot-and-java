@@ -4,6 +4,11 @@ cors:
   originPatterns: http://localhost:8080,http://localhost:3000,https://www.jvictorvale.com.br
 file:
   upload-dir: /Dev/rest-with-spring-boot-upload
+security:
+  jwt:
+    token:
+      secret-key: 53cr37
+      expire-lenght: 3600000
 email:
   subject: "Default Subject"
   message: "Default Message"
@@ -42,6 +47,8 @@ logging:
      #root: WARN
 #   br.com.jvictorvale: DEBUG
 spring-doc:
-  paths-to-match: /api/**/v1/**
+  paths-to-match:
+    - /api/**/v1/**
+    - /auth/**
   swagger-ui:
     use-root-path: true

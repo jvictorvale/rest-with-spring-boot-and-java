@@ -3,13 +3,11 @@ package br.com.jvictorvale.controllers;
 import br.com.jvictorvale.controllers.docs.PersonControllerDocs;
 import br.com.jvictorvale.data.dto.PersonDTO;
 import br.com.jvictorvale.file.exporter.MediaTypes;
-import br.com.jvictorvale.services.PersonServices;
+import br.com.jvictorvale.services.PersonService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -32,7 +30,7 @@ import java.util.Map;
 public class PersonController implements PersonControllerDocs {
 
     @Autowired
-    private PersonServices service;
+    private PersonService service;
 
     @GetMapping(produces = {
             MediaType.APPLICATION_JSON_VALUE,

@@ -4,7 +4,7 @@ import br.com.jvictorvale.data.dto.PersonDTO;
 import br.com.jvictorvale.exception.RequiredObjectIsNullException;
 import br.com.jvictorvale.model.Person;
 import br.com.jvictorvale.repository.PersonRepository;
-import br.com.jvictorvale.services.PersonServices;
+import br.com.jvictorvale.services.PersonService;
 import br.com.jvictorvale.unittests.mapper.mocks.MockPerson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -25,12 +25,12 @@ import static org.mockito.Mockito.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(MockitoExtension.class)
-class PersonServicesTest {
+class PersonServiceTest {
 
     MockPerson input;
 
     @InjectMocks
-    private PersonServices service;
+    private PersonService service;
 
     @Mock
     PersonRepository repository;

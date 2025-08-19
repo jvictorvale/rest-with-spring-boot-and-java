@@ -80,10 +80,10 @@ public class EmailSender implements Serializable {
         this.attachment = null;
     }
 
-    // email1@gmail.com;email2@gmail.com;email3@gmail.com
+    // email1@gmail.com,email2@gmail.com,email3@gmail.com
     private ArrayList<InternetAddress> getRecipients(String to) {
         String toWithoutSpaces = to.replaceAll("\\s", "");
-        StringTokenizer tok = new  StringTokenizer(toWithoutSpaces, ";");
+        StringTokenizer tok = new  StringTokenizer(toWithoutSpaces, ",");
         ArrayList<InternetAddress> recipientsList = new ArrayList<>();
         while (tok.hasMoreElements()) {
             try {
