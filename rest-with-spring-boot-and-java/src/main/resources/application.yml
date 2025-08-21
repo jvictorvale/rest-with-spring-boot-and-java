@@ -1,1 +1,60 @@
-spring.application.name=rest-with-spring-boot-and-java
+server:
+  port: 80
+cors:
+  originPatterns: http://localhost:8080,http://localhost:3000,https://www.jvictorvale.com.br
+file:
+  upload-dir: /Dev/rest-with-spring-boot-upload
+security:
+  jwt:
+    token:
+      secret-key: 53cr37
+      expire-lenght: 3600000
+email:
+  subject: "Default Subject"
+  message: "Default Message"
+spring:
+  application:
+   name: rest-with-spring-boot-and-java
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/rest_with_spring_boot?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+    show-sql: false
+    open-in-view: false
+  # spring.jpa.open-in-view
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.ssl.trust: smtp.gmail.com
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+logging:
+  level:
+     root: INFO
+     org.springframework.mail: DEBUG
+     com.sun.mail.smtp: DEBUG
+#     net.sf.jasperreports.engine.*: TRACE
+#     root: WARN
+#   br.com.jvictorvale: DEBUG
+spring-doc:
+  paths-to-match:
+    - /api/**/v1/**
+    - /auth/**
+  swagger-ui:
+    use-root-path: true
