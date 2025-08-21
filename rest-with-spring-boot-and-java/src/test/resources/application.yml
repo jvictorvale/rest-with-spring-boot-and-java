@@ -3,7 +3,7 @@ server:
 cors:
   originPatterns: http://localhost:8080,http://localhost:3000,https://www.jvictorvale.com.br
 file:
-  upload-dir: /Dev/rest-with-spring-boot-upload
+  upload-dir: /home/runner/work/rest-with-spring-boot-and-java/UploadDir
 security:
   jwt:
     token:
