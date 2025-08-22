@@ -1,7 +1,7 @@
 package br.com.jvictorvale.config;
 
 public interface TestConfigs {
-    int SERVER_PORT = 80;
+    int SERVER_PORT = 8888;
     String HEARDER_PARAM_AUTHORIZATION = "Authorization";
     String HEARDER_PARAM_ORIGIN = "Origin";
 

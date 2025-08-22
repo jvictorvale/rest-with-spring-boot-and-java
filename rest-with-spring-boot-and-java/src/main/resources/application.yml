@@ -17,9 +17,10 @@ spring:
    name: rest-with-spring-boot-and-java
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/rest_with_spring_boot?useTimezone=true&serverTimezone=UTC
+    url: ${JDBC_URL}
+#    url: jdbc:mysql://vale-db-server.cj28kwmc6890.us-east-2.rds.amazonaws.com/rest_with_spring_boot_vale?useTimezone=true&serverTimezone=UTC
     username: root
-    password: 123456
+    password: admin123
   jpa:
     hibernate:
       ddl-auto: none

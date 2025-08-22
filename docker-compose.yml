@@ -31,6 +31,20 @@ services:
       - db
     networks:
       - vale-network
+  portainer:
+    image: portainer/portainer-ce:latest
+    restart: always
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - vale-network
+
+volumes:
+  portainer_data:
+
 networks:
   vale-network:
     driver: bridge
