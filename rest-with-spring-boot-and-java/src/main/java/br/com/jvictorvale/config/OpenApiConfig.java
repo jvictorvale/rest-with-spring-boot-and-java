@@ -14,7 +14,7 @@ public class OpenApiConfig {
 
         return new OpenAPI()
                 .info(new Info()
-                        .title("REST API's RESTful from 0 with Java, Spring Boot, Kubernetes and Docker - Vale")
+                        .title("REST API's RESTful from 0 with Java, Spring Boot, Kubernetes and Docker - Victor Vale")
                         .version("v1")
                         .description("REST API's RESTful from 0 with Java, Spring Boot, Kubernetes and Docker")
                         .termsOfService("https://github.com/jvictorvale")
