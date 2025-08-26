@@ -91,7 +91,7 @@ jobs:
     - name: Deploy to Google Cloud Run
       run: |
         gcloud run deploy rest-with-spring-boot \
-        --image ${{ secrets.REGISTRY_INFO }}/${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot:latest
+        --image ${{ secrets.REGISTRY_INFO }}/${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot:latest \
         --region us-central1 \
         --platform managed \
         --allow-unauthenticated
