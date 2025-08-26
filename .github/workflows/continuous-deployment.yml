@@ -85,8 +85,8 @@ jobs:
         docker tag ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot:latest ${{ secrets.REGISTRY_INFO }}/rest-with-spring-boot:latest
         docker tag ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot:latest ${{ secrets.REGISTRY_INFO }}/rest-with-spring-boot:${{ github.run_id }}
         
-        docker push ${{ secrets.REGISTRY_INFO }}/rest-with-spring-boot:latest
-        docker push ${{ secrets.REGISTRY_INFO }}/rest-with-spring-boot:${{ github.run_id }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot:${{ github.run_id }}
         
     - name: Push to Docker Hub Container Registry
       run: |
