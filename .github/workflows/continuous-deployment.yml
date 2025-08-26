@@ -90,7 +90,7 @@ jobs:
 
     - name: Deploy to Google Cloud Run
       run: |
-        google run deploy rest-with-spring-boot \
+        gcloud run deploy rest-with-spring-boot \
         --image ${{ secrets.REGISTRY_INFO }}/${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot:latest
         --region us-central1 \
         --platform managed \
